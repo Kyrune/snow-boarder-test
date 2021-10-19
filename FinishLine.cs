@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class FinishLine : MonoBehaviour
 {
+    [SerializeField] float invokeDelay = 0.5f;
     void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene(0);
+            Invoke("ReloadScene", invokeDelay);
         }
+    }
+
+    void ReloadScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }
