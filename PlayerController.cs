@@ -16,10 +16,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        RotatePlayer();
+    }
+
+    void RotatePlayer()
+    {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb2d.AddTorque(torqueAmount);
-        } 
+        }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             rb2d.AddTorque(-torqueAmount);
