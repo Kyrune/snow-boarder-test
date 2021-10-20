@@ -6,4 +6,10 @@ public class DustTrails : MonoBehaviour
 {
     [SerializeField] ParticleSystem dustEffect;
 
+    void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.tag == "Ground")
+        {
+            dustEffect.Play();
+        }
+    }
 }
