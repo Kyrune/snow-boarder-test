@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float torqueAmount = 1f;
     [SerializeField] float speedBoost = 30f;
+    [SerializeField] float baseSpeed = 20f;
     Rigidbody2D rb2d; 
     SurfaceEffector2D surfaceEffector2D;
     
