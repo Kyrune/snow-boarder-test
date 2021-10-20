@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class DustTrails : MonoBehaviour
 {
+    [SerializeField] ParticleSystem dustEffect;
 
 }
