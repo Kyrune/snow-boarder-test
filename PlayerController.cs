@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float torqueAmount = 1f;
+    [SerializeField] float speedBoost = 30f;
     Rigidbody2D rb2d; 
     SurfaceEffector2D surfaceEffector2D;
     
@@ -17,6 +18,19 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         RotatePlayer();
+        RespondToBoost();
+    }
+
+    void RespondToBoost()
+    {
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            surfaceEffector2D.speed = speedBoost;
+        }
+        else 
+        {
+            surfaceEffector2D.speed = baseSpeed;
+        }
     }
 
     void RotatePlayer()
