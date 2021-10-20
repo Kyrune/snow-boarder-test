@@ -12,4 +12,11 @@ public class DustTrails : MonoBehaviour
             dustEffect.Play();
         }
     }
+
+    void OnCollisionExit2D(Collision2D other) {
+        if (other.gameObject.tag == "Ground")
+        {
+            dustEffect.Stop();
+        }
+    }
 }
