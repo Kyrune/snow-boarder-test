@@ -15,6 +15,7 @@ public class CrashDetector : MonoBehaviour
         if (other.tag == "Ground" && !hasCrashed)
         {
             hasCrashed = true;
+            FindObjectOfType<PlayerController>().DisableControls();
             crashEffect.Play();
             GetComponent<AudioSource>().PlayOneShot(crashSFX);
             Invoke("ReloadSceneBoop", invokeDelayBoop);        
